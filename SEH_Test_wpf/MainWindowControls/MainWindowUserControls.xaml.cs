@@ -38,7 +38,7 @@ namespace SEH_Test_wpf.MainWindowControls
             RunAsync();
             // I am rate limited, but the console log below would show in the output a parsed json object based on the user's query //
             System.Diagnostics.Debug.WriteLine(RunAsync());
-            // This is to show that if I was not rate limited, results would show in the output //
+            // This is to show that if I was not rate limited, user query results would show in the output as the test statement does //
             System.Diagnostics.Debug.WriteLine("Test");
         }
 

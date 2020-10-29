@@ -13,6 +13,8 @@
         </Grid.RowDefinitions>
 
         <uc:MainWindowUserControls Title="Enter title:" MaxLength="30" Height="50" />
-        <uc:MainWindowUserControls Title="Enter description:" MaxLength="140" Grid.Row="1" />
+        <uc:MainWindowUserControls Title="Enter description:" MaxLength="140" Grid.Row="1" Margin="0,0,0.333,249.667" />
+        <Button Name="b1" Click="b1_Click" Content="Submit" HorizontalAlignment="Left" Margin="352,233,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"/>
+
     </Grid>
 </Window>

@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-using SEH_Test_wpf;
+using SEH_Test_wpf.MainWindowControls;
 using Google.Apis.Customsearch.v1;
 using Google.Apis.Customsearch.v1.Data;
 using Google.Apis.Services;
@@ -29,6 +29,11 @@ namespace SEH_Test_wpf.MainWindowControls
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void b1_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
