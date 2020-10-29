@@ -1,4 +1,3 @@
-C:\Users\codro\source\repos\SEH_Test_wpf\SEH_Test_wpf\obj\Debug\SEH_Test_wpf.csprojAssemblyReference.cache
 C:\Users\codro\source\repos\SEH_Test_wpf\SEH_Test_wpf\obj\Debug\App.g.cs
 C:\Users\codro\source\repos\SEH_Test_wpf\SEH_Test_wpf\obj\Debug\SEH_Test_wpf_MarkupCompile.cache
 C:\Users\codro\source\repos\SEH_Test_wpf\SEH_Test_wpf\obj\Debug\SEH_Test_wpf_MarkupCompile.lref
