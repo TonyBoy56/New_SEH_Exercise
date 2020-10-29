@@ -2,21 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
-using SEH_Test_wpf.MainWindowControls;
-using Google.Apis.Customsearch.v1;
-using Google.Apis.Customsearch.v1.Data;
-using Google.Apis.Services;
 
 
 namespace SEH_Test_wpf.MainWindowControls
@@ -29,9 +15,18 @@ namespace SEH_Test_wpf.MainWindowControls
         public MainWindow()
         {
             InitializeComponent();
+            // Logging "query" to ensure input is stored
+            System.Diagnostics.Debug.WriteLine(query);
         }
 
+        string query;
+
         private void b1_Click(object sender, RoutedEventArgs e)
+        {
+            query = userInput.Text;
+        }
+
+        private void MainWindowUserControls_Loaded(object sender, RoutedEventArgs e)
         {
 
         }
