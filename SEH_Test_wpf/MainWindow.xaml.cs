@@ -15,20 +15,11 @@ namespace SEH_Test_wpf.MainWindowControls
         public MainWindow()
         {
             InitializeComponent();
-            // Logging "query" to ensure input is stored
-            System.Diagnostics.Debug.WriteLine(query);
         }
 
-        string query;
-
-        private void b1_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            query = userInput.Text;
-        }
-
-        private void MainWindowUserControls_Loaded(object sender, RoutedEventArgs e)
-        {
-
+            MyLabel.Content = MyTextBox.Text;
         }
     }
 }

@@ -22,7 +22,7 @@ namespace SEH_Test_wpf.MainWindowControls
             // I am rate limited, but the console log below would show in the output a parsed json object based on the user's query //
             System.Diagnostics.Debug.WriteLine(RunAsync());
             // This is to show that if I was not rate limited, user query results would show in the output as the test statement does //
-            System.Diagnostics.Debug.WriteLine("Test");
+            /*            System.Diagnostics.Debug.WriteLine("Test");*/
         }
 
         public string Title { get; set; }
@@ -40,22 +40,22 @@ namespace SEH_Test_wpf.MainWindowControls
             StreamReader reader = new StreamReader(dataStream);
             string responseString = reader.ReadToEnd();
             dynamic jsonData = JsonConvert.DeserializeObject(responseString);
+            Console.WriteLine(jsonData);
 
-            var results = new List<Result>();
-            foreach (var item in jsonData.items)
+/*            var results = new List<Result>();
+            foreach (var item in jsonData)
             {
-                results.Add(new Result
-                {
-                    Title = item.title,
-                    Link = item.link,
-                });
-            }
+                Console.WriteLine(
+                    item.title,
+                    item.link,
+                    item.cacheId);
+            }*/
         }
 
         public class Result
         {
-            public string Title { get; set; }
             public string Link { get; set; }
+            public string CachedId { get; set; }
         }
     }
 }

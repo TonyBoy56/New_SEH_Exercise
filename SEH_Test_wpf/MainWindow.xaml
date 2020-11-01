@@ -6,16 +6,17 @@
         xmlns:uc="clr-namespace:SEH_Test_wpf.MainWindowControls"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid Margin="10">
+    <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <uc:MainWindowUserControls x:Name="userInput" Title="Enter title:" MaxLength="30" Height="50" Loaded="MainWindowUserControls_Loaded" />
-
-        <Button Name="b1" Click="b1_Click" Content="Submit" HorizontalAlignment="Left" Margin="0,117,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"/>
-        <TextBlock HorizontalAlignment="Left" Margin="24,164,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Output Images Here:" VerticalAlignment="Top" Width="264" Height="110"/>
-
+        <Label Content="Enter some text" Margin="5"/>
+        <TextBox Grid.Row="1" Name="MyTextBox" Margin="5"/>
+        <Button Click="Button_Click" Grid.Row="2" Content="OK" Margin="5"/>
+        <Label Grid.Row="3" Name="MyLabel" Margin="5"/>
     </Grid>
 </Window>
