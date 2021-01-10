@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-C:\Users\codro\OneDrive\Desktop\Personal_Projects\New_SEH_Exercise\SEH_Test_wpf\obj\Debug\
+C:\Users\codro\OneDrive\Desktop\Personal_Projects\New_SEH_Exercise\SEH_Test_wpf\obj\Release\
 SEH_Test_wpf
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\codro\OneDrive\Desktop\Personal_Projects\New_SEH_Exercise\SEH_Test_wpf\App.xaml
 224947354
 
@@ -16,5 +16,5 @@ C:\Users\codro\OneDrive\Desktop\Personal_Projects\New_SEH_Exercise\SEH_Test_wpf\
 19-1958094340
 MainWindow.xaml;MainWindowControls\MainWindowUserControls.xaml;
 
-False
+True
 
