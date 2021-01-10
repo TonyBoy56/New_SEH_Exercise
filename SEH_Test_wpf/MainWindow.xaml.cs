@@ -21,6 +21,7 @@ namespace SEH_Test_wpf.MainWindowControls
         {
             InitializeComponent();
             this.DataContext = this;
+            RunAsync();
             // The below code shows in the console
             Console.WriteLine("This is a test");
         }
@@ -28,6 +29,20 @@ namespace SEH_Test_wpf.MainWindowControls
         public string Title { get; set; }
         public int MaxLength { get; set; }
         public string Text { get; internal set; }
+
+        static async Task RunAsync()
+        {
+            const string apiKey = "AIzaSyCyqAm432caVHD6ycUEWTbCNtg4rD_ao8Y";
+            const string cx = "f45637bb92df9b998";
+            const string query = "suits";
+            var request = WebRequest.Create("https://www.googleapis.com/customsearch/v1?key=" + apiKey + "&cx=" + cx + "&q=" + query);
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            Stream dataStream = response.GetResponseStream();
+            StreamReader reader = new StreamReader(dataStream);
+            string responseString = reader.ReadToEnd();
+            dynamic jsonData = JsonConvert.DeserializeObject(responseString);
+            Console.WriteLine(jsonData);
+        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
