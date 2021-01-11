@@ -8,6 +8,9 @@ using System.Windows.Controls;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System;
+using System.Web;
+using System.Drawing;
+
 
 
 namespace SEH_Test_wpf.MainWindowControls
@@ -70,11 +73,15 @@ namespace SEH_Test_wpf.MainWindowControls
                 Console.WriteLine(item.htmlSnippet);
             }
 
-            foreach (var item in jsonData.items)
+            foreach (dynamic item in jsonData.items)
             {
+                //string url = item.link;
+                
+                
+
                 Title.Content = item.title;
-                Link.Content = item.link;
-                HtmlSnippet = item.HtmlSnippet;
+                Link.Source = img;
+                ////HtmlSnippet = item.HtmlSnippet;
             }
         }
 
