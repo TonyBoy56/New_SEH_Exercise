@@ -21,17 +21,40 @@ namespace SEH_Test_wpf.MainWindowControls
         {
             InitializeComponent();
             this.DataContext = this;
-            RunAsync();
         }
 
         public int MaxLength { get; set; }
         public string Text { get; internal set; }
 
-        static async Task RunAsync()
+        //static async Task RunAsync()
+        //{
+        //    const string apiKey = "AIzaSyCyqAm432caVHD6ycUEWTbCNtg4rD_ao8Y";
+        //    const string cx = "f45637bb92df9b998";
+        //    const string query = "suits";
+        //    var request = WebRequest.Create("https://www.googleapis.com/customsearch/v1?key=" + apiKey + "&cx=" + cx + "&q=" + query);
+        //    HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+        //    Stream dataStream = response.GetResponseStream();
+        //    StreamReader reader = new StreamReader(dataStream);
+        //    string responseString = reader.ReadToEnd();
+        //    dynamic jsonData = JsonConvert.DeserializeObject(responseString);
+        //    Console.WriteLine(jsonData);
+
+        //    foreach (var item in jsonData.items)
+        //    {
+        //        Console.WriteLine(item.title);
+        //        Console.WriteLine(item.link);
+        //        Console.WriteLine(item.htmlSnippet);
+        //    }
+
+
+        //}
+
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
+            //MyLabel.Content = MyTextBox.Text;
             const string apiKey = "AIzaSyCyqAm432caVHD6ycUEWTbCNtg4rD_ao8Y";
             const string cx = "f45637bb92df9b998";
-            const string query = "suits";
+            string query = MyTextBox.Text;
             var request = WebRequest.Create("https://www.googleapis.com/customsearch/v1?key=" + apiKey + "&cx=" + cx + "&q=" + query);
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             Stream dataStream = response.GetResponseStream();
@@ -46,13 +69,6 @@ namespace SEH_Test_wpf.MainWindowControls
                 Console.WriteLine(item.link);
                 Console.WriteLine(item.htmlSnippet);
             }
-
-
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MyLabel.Content = MyTextBox.Text;
         }
 
         public class ObjectList
