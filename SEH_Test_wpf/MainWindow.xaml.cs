@@ -69,6 +69,13 @@ namespace SEH_Test_wpf.MainWindowControls
                 Console.WriteLine(item.link);
                 Console.WriteLine(item.htmlSnippet);
             }
+
+            foreach (var item in jsonData.items)
+            {
+                Title.Content = item.title;
+                Link.Content = item.link;
+                HtmlSnippet = item.HtmlSnippet;
+            }
         }
 
         public class ObjectList

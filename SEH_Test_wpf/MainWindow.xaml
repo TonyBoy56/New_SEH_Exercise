@@ -17,8 +17,8 @@
         <Label Content="Enter some text" Margin="5"/>
         <TextBox Grid.Row="1" Name="MyTextBox" Margin="5"/>
         <Button Click="Button_Click" Grid.Row="2" Content="OK" Margin="5"/>
-        <StackPanel>
-            
-        </StackPanel>
+        <Label Grid.Row="3" Name="Title" Margin="5"/>
+        <Label Grid.Row="4" Name="Link" Margin="5"/>
+        <Label Grid.Row="5" Name="HtmlSnippet" Margin="5"/>
     </Grid>
 </Window>
