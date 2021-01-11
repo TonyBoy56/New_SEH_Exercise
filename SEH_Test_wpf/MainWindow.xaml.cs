@@ -26,7 +26,6 @@ namespace SEH_Test_wpf.MainWindowControls
             Console.WriteLine("This is a test");
         }
 
-        public string Title { get; set; }
         public int MaxLength { get; set; }
         public string Text { get; internal set; }
 
@@ -42,11 +41,28 @@ namespace SEH_Test_wpf.MainWindowControls
             string responseString = reader.ReadToEnd();
             dynamic jsonData = JsonConvert.DeserializeObject(responseString);
             Console.WriteLine(jsonData);
+
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             MyLabel.Content = MyTextBox.Text;
         }
+
+        public class Root
+        {
+            public string kind { get; set; }
+            public string title { get; set; }
+            public string htmlTitle { get; set; }
+            public string link { get; set; }
+            public string displayLink { get; set; }
+            public string snippet { get; set; }
+            public string htmlSnippet { get; set; }
+            public string cacheId { get; set; }
+            public string formattedUrl { get; set; }
+            public string htmlFormattedUrl { get; set; }
+        }
+
     }
 }
