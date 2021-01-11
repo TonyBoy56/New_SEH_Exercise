@@ -22,8 +22,6 @@ namespace SEH_Test_wpf.MainWindowControls
             InitializeComponent();
             this.DataContext = this;
             RunAsync();
-            // The below code shows in the console
-            Console.WriteLine("This is a test");
         }
 
         public int MaxLength { get; set; }
@@ -42,6 +40,13 @@ namespace SEH_Test_wpf.MainWindowControls
             dynamic jsonData = JsonConvert.DeserializeObject(responseString);
             Console.WriteLine(jsonData);
 
+            foreach (var item in jsonData.items)
+            {
+                Console.WriteLine(item.title);
+                Console.WriteLine(item.link);
+                Console.WriteLine(item.htmlSnippet);
+            }
+
 
         }
 
@@ -50,7 +55,7 @@ namespace SEH_Test_wpf.MainWindowControls
             MyLabel.Content = MyTextBox.Text;
         }
 
-        public class Root
+        public class ObjectList
         {
             public string kind { get; set; }
             public string title { get; set; }
@@ -64,5 +69,10 @@ namespace SEH_Test_wpf.MainWindowControls
             public string htmlFormattedUrl { get; set; }
         }
 
+        //public class RootObj
+        //{
+        //    public string objectType { get; set; }
+        //    public List<Items> items { get; set; }
+        //}
     }
 }
