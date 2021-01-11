@@ -10,6 +10,7 @@ using Newtonsoft.Json;
 using System;
 using System.Web;
 using System.Drawing;
+using System.Drawing.Imaging;
 
 
 
@@ -28,29 +29,6 @@ namespace SEH_Test_wpf.MainWindowControls
 
         public int MaxLength { get; set; }
         public string Text { get; internal set; }
-
-        //static async Task RunAsync()
-        //{
-        //    const string apiKey = "AIzaSyCyqAm432caVHD6ycUEWTbCNtg4rD_ao8Y";
-        //    const string cx = "f45637bb92df9b998";
-        //    const string query = "suits";
-        //    var request = WebRequest.Create("https://www.googleapis.com/customsearch/v1?key=" + apiKey + "&cx=" + cx + "&q=" + query);
-        //    HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-        //    Stream dataStream = response.GetResponseStream();
-        //    StreamReader reader = new StreamReader(dataStream);
-        //    string responseString = reader.ReadToEnd();
-        //    dynamic jsonData = JsonConvert.DeserializeObject(responseString);
-        //    Console.WriteLine(jsonData);
-
-        //    foreach (var item in jsonData.items)
-        //    {
-        //        Console.WriteLine(item.title);
-        //        Console.WriteLine(item.link);
-        //        Console.WriteLine(item.htmlSnippet);
-        //    }
-
-
-        //}
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -75,12 +53,15 @@ namespace SEH_Test_wpf.MainWindowControls
 
             foreach (dynamic item in jsonData.items)
             {
-                //string url = item.link;
-                
+                string url = item.link;
+
+                WebClient wc = new WebClient();
+                byte[] bytes = wc.DownloadData(url);
+                MemoryStream ms = new MemoryStream(bytes);
                 
 
+
                 Title.Content = item.title;
-                Link.Source = img;
                 ////HtmlSnippet = item.HtmlSnippet;
             }
         }
