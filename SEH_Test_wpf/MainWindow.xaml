@@ -18,6 +18,6 @@
         <TextBox Grid.Row="1" Name="MyTextBox" Margin="5"/>
         <Button Click="Button_Click" Grid.Row="2" Content="OK" Margin="5"/>
         <Label Grid.Row="3" Name="Title" Margin="5"/>
-        <Image x:Name="Link" Source="{Binding Path=item.link}"/>
+        <Image x:Name="Link" Source="{Binding Path=img}"/>
     </Grid>
 </Window>

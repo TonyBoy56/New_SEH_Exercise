@@ -42,7 +42,9 @@ namespace SEH_Test_wpf.MainWindowControls
             StreamReader reader = new StreamReader(dataStream);
             string responseString = reader.ReadToEnd();
             dynamic jsonData = JsonConvert.DeserializeObject(responseString);
-            Console.WriteLine(jsonData);
+            //Console.WriteLine(jsonData);
+
+            // The loop below will show returning images based on the user's search in the console //
 
             foreach (var item in jsonData.items)
             {
@@ -51,18 +53,24 @@ namespace SEH_Test_wpf.MainWindowControls
                 Console.WriteLine(item.htmlSnippet);
             }
 
+            // This is currently where my issues are. I'm encountering errors that parameters being passed to line 66 are not valid. //
+
             foreach (dynamic item in jsonData.items)
             {
                 string url = item.link;
+                // This is to show that I am actually storing item.link in a string var. All that's left is conversion to an image. //
+                Console.WriteLine(url);
 
-                WebClient wc = new WebClient();
-                byte[] bytes = wc.DownloadData(url);
-                MemoryStream ms = new MemoryStream(bytes);
-                
+                // This is where my efforts in converting the string to an image begins. //
+
+                //WebClient wc = new WebClient();
+                //byte[] bytes = wc.DownloadData(url);
+                //MemoryStream ms = new MemoryStream(bytes);
+                //System.Drawing.Image img = System.Drawing.Image.FromStream(ms);
 
 
                 Title.Content = item.title;
-                ////HtmlSnippet = item.HtmlSnippet;
+                //Title.Content = item.link;
             }
         }
 
