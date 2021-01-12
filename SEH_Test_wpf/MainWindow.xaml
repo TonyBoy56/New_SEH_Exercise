@@ -18,7 +18,7 @@
         <TextBox Name="MyTextBox" Margin="5,30,4.333,54.333"/>
         <Button Click="Button_Click" Grid.Row="1" Content="OK" Margin="37,9.667,629.333,71.667"/>
         <Label Grid.Row="2" Name="Title" Margin="5,10.333,485.333,70"/>
-        <Label Grid.Row="2" Name="Link" Margin="5,10.333,485.333,70"/>
+        <Label Grid.Row="3" Name="Link" Margin="5,10.333,485.333,70"/>
         <!--<Image x:Name="Link" Source="{Binding Image}" Margin="-4,0,676.333,-0.333" Grid.Row="3"/>-->
     </Grid>
 </Window>
