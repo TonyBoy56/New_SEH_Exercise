@@ -62,19 +62,20 @@ namespace SEH_Test_wpf.MainWindowControls
             {
                 string url = item.link;
                 // This is to show that I am actually storing item.link in a string var. All that's left is conversion to an image. //
-                Console.WriteLine(url);
+                //Console.WriteLine(url);
 
                 // This is where my efforts in converting the string to an image begins. //
 
                 var imgUrl = new Uri("http://images.google.com/hosted/life/3a92275521f486db.html");
-                var imageData = new WebClient().DownloadData(imgUrl);
-                var bitmapImage = new BitmapImage { CacheOption = BitmapCacheOption.OnLoad };
-                bitmapImage.BeginInit();
-                bitmapImage.StreamSource = new MemoryStream(imageData);
-                bitmapImage.EndInit();
+                Console.WriteLine(imgUrl);
+                //var imageData = new WebClient().DownloadData(imgUrl);
+                //var bitmapImage = new BitmapImage { CacheOption = BitmapCacheOption.OnLoad };
+                //bitmapImage.BeginInit();
+                //bitmapImage.StreamSource = new MemoryStream(imageData);
+                //bitmapImage.EndInit();
 
-                Link.Source = bitmapImage;
                 Title.Content = item.title;
+                Link.Content= item.link;
                 //Title.Content = item.link;
             }
         }
