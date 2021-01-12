@@ -68,14 +68,11 @@ namespace SEH_Test_wpf.MainWindowControls
 
                 var imgUrl = new Uri("http://images.google.com/hosted/life/3a92275521f486db.html");
                 Console.WriteLine(imgUrl);
-                //var imageData = new WebClient().DownloadData(imgUrl);
-                //var bitmapImage = new BitmapImage { CacheOption = BitmapCacheOption.OnLoad };
-                //bitmapImage.BeginInit();
-                //bitmapImage.StreamSource = new MemoryStream(imageData);
-                //bitmapImage.EndInit();
+
+                
 
                 Title.Content = item.title;
-                Link.Content= item.link;
+                //Link.Content= item.link;
                 //Title.Content = item.link;
             }
         }
