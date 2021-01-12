@@ -1,5 +1,6 @@
 ﻿using System.Net;
 using System.Windows;
+using System.Windows.Media.Imaging;
 using System.Linq;
 using System.Text;
 using System.IO;
@@ -9,8 +10,8 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System;
 using System.Web;
-using System.Drawing;
-using System.Drawing.Imaging;
+//using System.Drawing;
+//using System.Drawing.Imaging;
 
 
 
@@ -42,7 +43,9 @@ namespace SEH_Test_wpf.MainWindowControls
             StreamReader reader = new StreamReader(dataStream);
             string responseString = reader.ReadToEnd();
             dynamic jsonData = JsonConvert.DeserializeObject(responseString);
-            //Console.WriteLine(jsonData);
+            Console.WriteLine(jsonData);
+
+
 
             // The loop below will show returning images based on the user's search in the console //
 
@@ -63,12 +66,14 @@ namespace SEH_Test_wpf.MainWindowControls
 
                 // This is where my efforts in converting the string to an image begins. //
 
-                //WebClient wc = new WebClient();
-                //byte[] bytes = wc.DownloadData(url);
-                //MemoryStream ms = new MemoryStream(bytes);
-                //System.Drawing.Image img = System.Drawing.Image.FromStream(ms);
+                var imgUrl = new Uri("http://images.google.com/hosted/life/3a92275521f486db.html");
+                var imageData = new WebClient().DownloadData(imgUrl);
+                var bitmapImage = new BitmapImage { CacheOption = BitmapCacheOption.OnLoad };
+                bitmapImage.BeginInit();
+                bitmapImage.StreamSource = new MemoryStream(imageData);
+                bitmapImage.EndInit();
 
-
+                Link.Source = bitmapImage;
                 Title.Content = item.title;
                 //Title.Content = item.link;
             }
